@@ -1,0 +1,18 @@
+
+  .container {
+    border: outset 6px #ddd;
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .tile {
+    margin: 0;
+    padding: 0;
+    background-color: #ddd;
+    border: 1px solid black;
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+  }
