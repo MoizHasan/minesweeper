@@ -9,10 +9,32 @@
 
   .tile {
     margin: 0;
-    padding: 0;
     background-color: #ddd;
     border: 1px solid black;
     float: left;
     box-sizing: border-box;
     padding: 10px;
+  }
+
+  .upper {
+    display: none;
+    position: fixed;
+    top: 14px;
+    left: 665px;
+    width: 350px;
+    height: 350px;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+
+  .upper-tile {
+    margin: 0;
+    background-color: #ddd;
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+
+  .bomb {
+    background-color: red;
   }
