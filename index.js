@@ -61,6 +61,13 @@ function setNumbers(width, height) {
         if( $(tiles[i-1]).hasClass('bomb') ) {
           iterate();
         }
+          //left-upper
+          if (i > width - 1) {
+            if ( $(tiles[i-height-1]).hasClass('bomb') ) {
+              iterate();
+            }
+          }
+          //left-lower
       }
 
       //upper
@@ -72,12 +79,16 @@ function setNumbers(width, height) {
 
       //lower
       if (i < width * (height-1)) {
-
+        if ( $(tiles[i+height]).hasClass('bomb') ) {
+          iterate();
+        }
       }
 
       //right
       if ((i+1) % width !== 0) {
-
+        if( $(tiles[i+1]).hasClass('bomb') ) {
+          iterate();
+        }
       }
     }
   }
