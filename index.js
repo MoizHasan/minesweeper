@@ -53,46 +53,63 @@ function setNumbers(width, height) {
     }
   }
 
-  for(var i=0; i < tileCount; i++) {
-    if (!$(tiles[i]).hasClass('bomb')) { //Skip all the bombs 
+for(var i=0; i < tileCount; i++) {
+  if (!$(tiles[i]).hasClass('bomb')) { //Skip all the bombs 
 
-      //left
-      if (i % width !== 0) {
-        if( $(tiles[i-1]).hasClass('bomb') ) {
-          iterate();
+    //left
+    if (i % width !== 0) {
+      if( $(tiles[i-1]).hasClass('bomb') ) {
+        iterate();
+      }
+        //left-upper
+        if (i > width - 1) {
+          if ( $(tiles[i-height-1]).hasClass('bomb') ) {
+            iterate();
+          }
         }
-          //left-upper
-          if (i > width - 1) {
-            if ( $(tiles[i-height-1]).hasClass('bomb') ) {
+        //left-lower
+        if (i < width * (height-1)) {
+          if ( $(tiles[i+height-1]).hasClass('bomb') ) {
+            iterate();
+          }
+        }
+      }
+
+    //upper
+    if (i > width - 1) {
+      if ( $(tiles[i-height]).hasClass('bomb') ) {
+        iterate();
+      }
+    }
+
+    //lower
+    if (i < width * (height-1)) {
+      if ( $(tiles[i+height]).hasClass('bomb') ) {
+        iterate();
+      }
+    }
+
+    //right
+    if ((i+1) % width !== 0) {
+      if( $(tiles[i+1]).hasClass('bomb') ) {
+        iterate();
+      }
+    //right-upper
+    if (i > width - 1) {
+      if ( $(tiles[i-height+1]).hasClass('bomb') ) {
+        iterate();
+      }
+    }
+          //right-lower
+          if (i < width * (height-1)) {
+            if ( $(tiles[i+height+1]).hasClass('bomb') ) {
               iterate();
             }
           }
-          //left-lower
-      }
-
-      //upper
-      if (i > width - 1) {
-        if ( $(tiles[i-height]).hasClass('bomb') ) {
-          iterate();
-        }
-      }
-
-      //lower
-      if (i < width * (height-1)) {
-        if ( $(tiles[i+height]).hasClass('bomb') ) {
-          iterate();
-        }
-      }
-
-      //right
-      if ((i+1) % width !== 0) {
-        if( $(tiles[i+1]).hasClass('bomb') ) {
-          iterate();
         }
       }
     }
   }
-}
 
 function iterateSquare() {
 
