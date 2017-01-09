@@ -190,10 +190,19 @@ $(document).on('click', '.upper-tile', function() {
     if (evaluate()) { //Game has been won.
       for (var i =0; i <  $('.tile').length; i++) {
         $('.upper-tile[data-label="' + i + '"]').prop("disabled",true); //don't allow any further clicks.
-          $('.upper-tile[data-label="' + i + '"]').html('&#9873;');
+          $('.upper-tile[data-label="' + i + '"]').html('&#9873;'); //flag image
       }
   }
   groupClear(data, height, width); 
+});
+
+$(document).on("contextmenu", ".upper-tile", function(e){ //right click
+ if ($(this).html() === "") {
+    $(this).html('&#9873;');
+  } else {
+    $(this).html('');
+  }
+   return false;
 });
 }
 
