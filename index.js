@@ -76,7 +76,7 @@ for(var i=0; i < tileCount; i++) {
         }
         //left-lower
         if (i < width * (height-1)) {
-          if ( $(tiles[i+height-1]).hasClass('bomb') ) {
+          if ( $(tiles[i+parseInt(height)-1]).hasClass('bomb') ) {
             iterate();
           }
         }
@@ -91,7 +91,7 @@ for(var i=0; i < tileCount; i++) {
 
     //lower
     if (i < width * (height-1)) {
-      if ( $(tiles[i+height]).hasClass('bomb') ) {
+      if ( $(tiles[i+parseInt(height)]).hasClass('bomb') ) {
         iterate();
       }
     }
@@ -109,7 +109,7 @@ for(var i=0; i < tileCount; i++) {
     }
           //right-lower
           if (i < width * (height-1)) {
-            if ( $(tiles[i+height+1]).hasClass('bomb') ) {
+            if ( $(tiles[i+parseInt(height)+1]).hasClass('bomb') ) {
               iterate();
             }
           }
